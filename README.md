@@ -2,10 +2,6 @@
 
 # Management system used: Trello
 
-
-
-
-
 #   Front-End: Teamwork Assignment
 
 ##   Project Description
