@@ -1,0 +1,66 @@
+body {
+  max-width: 1024px;
+  margin: auto;
+}
+
+* {
+  margin: 5px;
+}
+
+#main-and-side {
+  min-height: 800px;
+  display: flex;
+  flex-flow: row;
+}
+
+#main-and-side > main {
+  margin: 0px;
+  background: #dddd88;
+  flex: 3 1 70%;
+  order: 1;
+}
+
+#main-and-side > aside {
+  margin: 0px;
+  background: #ccccff;
+  flex: 1 6 30%;
+  order: 2;
+}
+
+nav {
+  min-height: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: #ccccff;
+}
+
+nav > a {
+  min-width: 20%;
+  border-style: solid;
+  border-width: 2px;
+  text-align: center;
+}
+
+header, footer {
+  display: block;
+  min-height: 100px;
+  background: #ffeebb;
+}
+
+/* Too narrow to support 2 columns */
+@media all and (max-width: 600px) {
+  #main-and-side, #page {
+      flex-direction: column;
+  }
+
+  #main-and-side > * {
+  /* Return them to document order */
+      order: 0;
+  }
+
+  header, #main-and-side > aside, footer {
+    min-height: 50px;
+    max-height: 50px;
+  }
+}
