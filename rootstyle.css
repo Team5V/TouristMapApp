@@ -1,0 +1,97 @@
+body {
+  max-width: 1024px; 
+  margin: auto;
+}
+
+* {
+  margin: 5px;
+  border-radius: 10px;
+}
+
+#main-and-side {
+  min-height: 800px;
+  display: flex;
+  flex-flow: row;
+}
+
+#main-and-side > main {
+  margin: 0px;
+  background: #dddd88;
+  flex: 3 1 70%;
+  order: 1;
+}
+
+#main-and-side > aside {
+  margin: 0px;
+  background: #ccccff;
+  flex: 1 6 30%;
+  order: 2;
+}
+
+nav {
+  min-height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  background: #ccccff;
+}
+
+nav > button {
+  min-width: 20%;
+  min-height: 50px;
+  color: white;
+  background-color: #4CAF50;
+}
+
+button:hover {
+  background-color: #B0F0B2;
+  color: black;
+}
+
+header > img {
+  max-height: 100px;
+  max-width: 100%;
+  object-fit: scale-down;
+}
+
+header, footer {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  min-height: 100px;
+  max-height: 120px;
+  background: #ffeebb;
+}
+
+/* Too narrow to support 2 columns */
+@media all and (max-width: 600px) {
+  #main-and-side, #page {
+    flex-direction: column;
+  }
+
+  #main-and-side > * {
+  /* Return them to document order */
+    order: 0;
+  }
+
+  header, #main-and-side > aside, footer {
+    min-height: 50px;
+    max-height: 80px;
+  }
+
+  #bg-flag{
+    display: none;
+  }
+
+  header > img {
+    min-height: 20%;
+    max-height: 100px;
+    max-width: 100%;
+    object-fit: fill;
+    margin: 0px;  
+  }
+
+  nav > button{
+    width: 40%;
+  }
+}
