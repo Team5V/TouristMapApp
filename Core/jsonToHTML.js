@@ -1,9 +1,10 @@
 $(document).ready(function(e) {
-    $.getJSON( 'routes.json' , function( result ){
-        // call with result.asdflaksjdfa;
-        // visualize function from local json
+    $.getJSON( 'routes.json' , function (data) {
+        jsonObj = data;
+        console.log(jsonObj.routes['0'].name);
     });
 });
+
 ////Function for filling table
 // $(function() {
 //    let people = [];
