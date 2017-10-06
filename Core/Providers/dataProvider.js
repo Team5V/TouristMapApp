@@ -3,5 +3,5 @@
 // (cached localy on the client) or request new data from God.
 
 const dataProviderModule = () => {
-  
+
 };

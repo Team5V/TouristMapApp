@@ -110,7 +110,7 @@ header, footer {
     height:     100%;
     width:      100%;
     background: rgba( 255, 255, 255, .8 )
-                url('https://i.redd.it/ounq1mw5kdxy.gif') // TODO: Change gifche
+                url('https://i.redd.it/ounq1mw5kdxy.gif')
                 50% 50%
                 no-repeat;
 }
