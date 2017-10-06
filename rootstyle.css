@@ -95,6 +95,9 @@ header, footer {
     width: 40%;
   }
 }
+/* This is the loading animation when loading a Ajax request */
+
+
 
 /* Start by setting display:none to make this hidden.
    Then we position it in relation to the viewport window
@@ -110,19 +113,7 @@ header, footer {
     height:     100%;
     width:      100%;
     background: rgba( 255, 255, 255, .8 )
-                url('https://i.redd.it/ounq1mw5kdxy.gif')
+                url('http://www.owlhatworld.com/wp-content/uploads/2015/12/28.gif')
                 50% 50%
                 no-repeat;
-}
-
-/* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
-body.loading {
-    overflow: hidden;
-}
-
-/* Anytime the body has the loading class, our
-   modal element will be visible */
-body.loading .modal {
-    display: block;
 }
