@@ -1,0 +1,37 @@
+{
+"routes": [
+        {
+        "id": 1,
+        "name" : "ravno bore_milevi skali",
+        "distanceinminutes": "120",
+        "difficulty": "easy",
+        "priorities": [
+            {
+                "txt": "Work"
+            }
+        ]
+        },
+        {
+        "id": 2,
+        "name" : "qstrebec_musala",
+        "distanceinminutes": "120",
+        "difficulty": "hardcore",
+        "priorities": [
+            {
+                "txt": "Work"
+            }
+        ]
+        },
+        {
+        "id": 3,
+        "name" : "ruen_maluk ruen",
+        "distanceinminutes": "42",
+        "difficulty": "imposiburu",
+        "priorities": [
+            {
+                "txt": "Work"
+            }
+        ]
+        }
+    ]
+}
