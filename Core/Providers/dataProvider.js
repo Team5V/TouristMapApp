@@ -7,6 +7,7 @@ const dataProviderModule = (data) => {
     // OpenWeatherApp ID P.S. Please do not use in own website :)
     let appID = "0d8a1438b002e51fd716aa4e4acafdd7";
     
+    
     // call to check if the song is in local storage
     $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
     if (options.cache) {
@@ -47,7 +48,8 @@ const dataProviderModule = (data) => {
             });
         });
     }
-
+    // To clean local storage
+    // localStorage.removeItem("Info");
     return {
       getRouteByID
       // TODO: see what data needs to be pulled and pull it.
