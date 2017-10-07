@@ -7,13 +7,12 @@ const dataProviderModule = (data) => {
     // OpenWeatherApp ID P.S. Please do not use in own website :)
     let appID = "0d8a1438b002e51fd716aa4e4acafdd7";
     
-    
     // call to check if the route is in local storage
     $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
     if (options.cache) {
       let success = originalOptions.success || $.noop, // .noop is a jQuery method that doesn't accept any arguments
           url = originalOptions.url;
-
+     
       options.cache = false;
       // Check if there is a route with that id/url in local storage
       options.beforeSend = function () {
@@ -49,7 +48,7 @@ const dataProviderModule = (data) => {
         });
     }
     // To clean local storage
-    // localStorage.removeItem("Info");
+    // localStorage.removeItem("routeName");
     return {
       getRouteByID
       // TODO: see what data needs to be pulled and pull it.
