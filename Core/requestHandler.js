@@ -5,7 +5,7 @@ const requestHandlerModule = () => {
   $.ajax({
     type: "POST",
     dataType: 'json',
-    contentType: "application/json; charset=utf-8",
+    contentType: "routes.json; charset=utf-8",
     url: url,
     data: '{"Route Id":"' + Id + '"}',
     cache: true, //It must "true" if you want to cache else "false"
@@ -20,14 +20,5 @@ const requestHandlerModule = () => {
     error: function (xhr, textStatus, error) {
         alert("Error Happened!");
     }
-  });
-  // has to be right after document ready !!!
-  $(document).on({
-      ajaxStart: () => {
-          $body.addClass("loading");
-      },
-      ajaxStop: () => {
-          $body.removeClass("loading");
-      }
   });
 };
