@@ -8,10 +8,10 @@ const dataProviderModule = (data) => {
     let appID = "0d8a1438b002e51fd716aa4e4acafdd7";
     
     
-    // call to check if the song is in local storage
+    // call to check if the route is in local storage
     $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
     if (options.cache) {
-      let success = originalOptions.success || $.noop,
+      let success = originalOptions.success || $.noop, // .noop is a jQuery method that doesn't accept any arguments
           url = originalOptions.url;
 
       options.cache = false;
