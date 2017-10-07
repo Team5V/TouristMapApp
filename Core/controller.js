@@ -1,5 +1,11 @@
-//contains the logic needed to process the view events. Most of functionality will go here.
-
-const controllerModule = (view, model) => {
+const controllerModule = (view, model, provider) => {
   
-};
+    const navigateTo = (destination) => {
+      if(model.template!==destination){
+        view.update(provider.resolve(destination)).then(model.template=destination);
+        //shte se preebe shot view.update return void
+      }
+    }
+  
+    return {navigateTo};
+  }

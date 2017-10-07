@@ -1,14 +1,12 @@
-//container, composition root, IOC, Dependency Injection
-
 const compositionRoot = (() =>{
-  const dataFactory = dataModelFactoryModule();
-  const viewFactory = viewModelFactoryModule();
+  const jsObjectFactory = jsObjectFactoryModule();
+  const htmlTemplateFactory = htmlTemplateFactoryModule();
   const reqestHandler = reqestHandlerModule();
   const dataProvider = dataProviderModule(reqestHandler);
 
-  const mainModel = modelModule();
-  const mainView = viewModule();
-  const mainController = controllerModule(mainView, mainModel);
+  const model = modelModule();
+  const view = viewModule();
+  const controller = controllerModule(view, model);
 
-  return {mainController};
+  return {controller};
 })();
