@@ -54,7 +54,25 @@ const dataProviderModule = () => {
   }
 
   function resolveHtmlTemplate(id) {
-    return htmlTemplateFactoryModule().routesPage();
+    switch(id){
+
+      case 'routes':
+      id = htmlTemplateFactoryModule().routesPage();
+      break;
+      
+      case 'groups':
+      id = htmlTemplateFactoryModule().groupsPage();
+      break;
+
+      case 'about':
+      id = htmlTemplateFactoryModule().aboutPage();
+      break;
+      
+      default:
+      break;
+
+    }
+    return id;
   }
 
   // To clean local storage
