@@ -1,6 +1,9 @@
 body {
   max-width: 1024px;
   margin: auto;
+  background-image: url(backgroundImage.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 * {
@@ -43,7 +46,15 @@ nav > div > button {
   background-color: #4CAF50;
 }
 /**/
-	.f-nav{ z-index: 9999; position: fixed; top: 0; width: 100%; max-width: 600px; } /* this make our menu fixed top */
+.f-nav { 
+  z-index: 9999;
+  position: fixed; 
+  top: 0;
+  left:0;
+  right:0;
+  width: 100%;
+  margin:0;
+} /* this make our menu fixed top */
 /**/
 button:hover {
   background-color: #B0F0B2;
@@ -51,9 +62,10 @@ button:hover {
 }
 
 header > img {
-  max-height: 100px;
+  max-height: 100%;
   max-width: 100%;
-  object-fit: scale-down;
+  background-repeat: repeat;
+  
 }
 
 header, footer {
@@ -62,7 +74,6 @@ header, footer {
   max-width: 100%;
   min-height: 100px;
   max-height: 120px;
-  background: #ffeebb;
 }
 
 /* Too narrow to support 2 columns */
