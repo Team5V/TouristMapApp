@@ -28,7 +28,7 @@ body {
   order: 2;
 }
 
-nav {
+nav > div{
   min-height: 50px;
   display: flex;
   justify-content: space-evenly;
@@ -36,13 +36,15 @@ nav {
   background: #ccccff;
 }
 
-nav > button {
+nav > div > button {
   min-width: 20%;
   min-height: 50px;
   color: white;
   background-color: #4CAF50;
 }
-
+/**/
+	.f-nav{ z-index: 9999; position: fixed; top: 0; width: 100%; max-width: 600px; } /* this make our menu fixed top */
+/**/
 button:hover {
   background-color: #B0F0B2;
   color: black;
@@ -91,7 +93,7 @@ header, footer {
     margin: 0px;
   }
 
-  nav > button{
+  nav > div > button{
     width: 40%;
   }
 }
