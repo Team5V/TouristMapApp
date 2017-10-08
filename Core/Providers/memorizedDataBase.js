@@ -2,23 +2,23 @@
 //mislete go vse edno tova ni sa dannite idvashti ot servara koito go nqmame
 
 const memorizedDataBaseModule = (() => {
-    const localData = window.localStorage;
+    const localStorage = window.localStorage;
     
     function save(key, data) {
-        if (!localData[key]) {
-            localData.setItem(key, JSON.stringify(data));
+        if (!localStorage[key]) {
+            localStorage.setItem(key, JSON.stringify(data));
         }
     }
 
     function get(key) {
-        console.log("local storage" , localData);
-        if(localData[key]){
-            return JSON.parse(localData[key]);
+        console.log("local storage" , localStorage);
+        if(localStorage[key]){
+            return JSON.parse(localStorage[key]);
         }
     }
 
     function containsKey(key){
-        return !!localData[key];
+        return !!localStorage[key];
     }
 
     return {

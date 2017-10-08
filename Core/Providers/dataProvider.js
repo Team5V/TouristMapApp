@@ -4,57 +4,64 @@
 
 // From --> https://stackoverflow.com/questions/17104265/caching-a-jquery-ajax-response-in-javascript-browser/30659268#30659268
 const dataProviderModule = () => {
-    // OpenWeatherApp ID P.S. Please do not use in own website :)
-    let appID = "0d8a1438b002e51fd716aa4e4acafdd7";
-    
-    // call to check if the route is in local storage
-    $.ajaxPrefilter(function (options, originalOptions, jqXHR) {
-            if (options.cache) {
-            let success = originalOptions.success || $.noop, // .noop is a jQuery method that doesn't accept any arguments
-                url = originalOptions.url;
-            
-            options.cache = false;
-            // Check if there is a route with that id/url in local storage
-            options.beforeSend = function () {
-                if (localStorage.getItem(url)) {
-                    success(localStorage.getItem(url));
-                    return false;
-                }
-                return true;
-            };
-            // if resonseJSON is not defined(for datatype HTML) 
-            // error message: responseJSON is not defined
-            // fix: let responseData = JSON.stringify(data);
-            options.success = function (data, textStatus) {
-                let responseData = JSON.stringify(data.responseJSON);
-                localStorage.setItem(url, responseData);
-                if ($.isFunction(success)) {
-                    success(responseJSON);
-                } //call back to original ajax call
-            };
-        }
-    });
-   function getRouteById(id) {
-        let url = "https://api.openweathermap.org/data/2.5/weather?id=" + id + "&APPID=" + appID;
+  // OpenWeatherApp ID P.S. Please do not use in own website :)
+  let appID = "0d8a1438b002e51fd716aa4e4acafdd7";
 
-        return new Promise((resolve, reject) => {
-            $.ajax({
-                url: url,
-                dataType: "json",
-                cache: true,
-                success: function (data) {
-                    resolve(data);
-                },
-                error: function (err) {
-                    console.log("Route is confused, try again", err);
-                }
-            });
-        });
+  // call to check if the route is in local storage
+  $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+    if (options.cache) {
+      let success = originalOptions.success || $.noop, // .noop is a jQuery method that doesn't accept any arguments
+        url = originalOptions.url;
+
+      options.cache = false;
+      // Check if there is a route with that id/url in local storage
+      options.beforeSend = function() {
+        if (localStorage.getItem(url)) {
+          success(localStorage.getItem(url));
+          return false;
+        }
+        return true;
+      };
+      //
+      options.success = function(data, textStatus) {
+        let responseData = JSON.stringify(data.responseJSON);
+        localStorage.setItem(url, responseData);
+        if ($.isFunction(success)) success(responseJSON); //call back to original ajax call
+      };
     }
-    // To clean local storage
-    // localStorage.removeItem("routeName");
-    return {
-      getRouteByID
-      // TODO: see what data needs to be pulled and pull it.
-    }
+  });
+
+  function getRouteById(id) {
+    let url =
+      "https://api.openweathermap.org/data/2.5/weather?id=" +
+      id +
+      "&APPID=" +
+      appID;
+
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: url,
+        dataType: "json",
+        cache: true,
+        success: function(data) {
+          resolve(data);
+        },
+        error: function(err) {
+          console.log("Route is confused, try again", err);
+        }
+      });
+    });
+  }
+
+  function resolveHtmlTemplate(id) {
+    return htmlTemplateFactoryModule().routesPage();
+  }
+
+  // To clean local storage
+  // localStorage.removeItem("routeName");
+  return {
+    getRouteById,
+    resolveHtmlTemplate
+    // TODO: see what data needs to be pulled and pull it.
+  };
 };

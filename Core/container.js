@@ -1,12 +1,11 @@
-const compositionRoot = (() =>{
+const controller = (() => {
   const jsObjectFactory = jsObjectFactoryModule();
   const htmlTemplateFactory = htmlTemplateFactoryModule();
-  const requestHandler = requestHandlerModule();
-  const dataProvider = dataProviderModule(requestHandler);
+  //const requestHandler = requestHandlerModule();
+  const dataProvider = dataProviderModule();
 
   const model = modelModule();
   const view = viewModule();
-  const controller = controllerModule(view, model);
 
-  return {controller};
+  return controllerModule(view, model, dataProvider);
 })();

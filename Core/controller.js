@@ -1,11 +1,12 @@
 const controllerModule = (view, model, provider) => {
-  
-    const navigateTo = (destination) => {
-      if(model.template!==destination){
-        view.update(provider.resolve(destination)).then(model.template=destination);
-        //shte se preebe shot view.update return void
-      }
+  view.initView();
+
+  const navigateTo = (destination) => {
+    if (model.template !== destination) {
+      view.update(provider.resolveHtmlTemplate(destination));
     }
-  
-    return {navigateTo};
-  }
+    model.template = destination;
+  };
+
+  return { navigateTo };
+};

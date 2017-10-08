@@ -1,11 +1,11 @@
 const modelModule = () => {
-  const template = '';
-  const dataSet = {};
+  let template = 'new';
+  let dataSet = {};
   
   return {
-    set template (value) { this.template = value},
-    get template () { return this.template},
-    set dataSet (value) { this.dataSet = value},
-    get dataSet () { return this.dataSet}
-  }
+    set template (value) { template = value},
+    get template () {template},
+    set dataSet (value) { dataSet = value},
+    get dataSet () { return dataSet}
+  };
 }
