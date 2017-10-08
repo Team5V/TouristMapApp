@@ -5,7 +5,7 @@ const requestHandlerModule = () => {
   $.ajax({
     type: "POST",
     dataType: 'json',
-    contentType: "routes.json; charset=utf-8",
+    contentType: "application/json; charset=utf-8",
     url: url,
     data: '{"Route Id":"' + Id + '"}',
     cache: true, //It must "true" if you want to cache else "false"
