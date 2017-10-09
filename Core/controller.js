@@ -1,12 +1,16 @@
 const controllerModule = (view, model, provider) => {
-  view.initView();
+  let currentPage = "";
 
-  const navigateTo = (destination) => {
-    if (model.template !== destination) {
-      view.update(provider.resolveHtmlTemplate(destination));
+  const navigateTo = (id = "") => {
+    if (id.endsWith("Page") && id !== currentPage) {
+      model.template(provider.resolveTemplate(id));
+      view.updateTemplate(model.template());
+      currentPage = id;
+    } else {
+      model.data(provider.resolveData(id));
+      view.updateData(model.data());
     }
-    model.template = destination;
   };
 
-  return { navigateTo };
+  return navigateTo;
 };

@@ -1,30 +1,28 @@
 const viewModule = () => {
+  "use strict";
   const mainFrame = $("main");
-  const sideFrame = $("side");
+  const sideFrame = $("aside");
 
-  const setPageTemplate = template => {
+  const updateTemplate = template => {
     if (template.main) mainFrame.html(template.main);
     if (template.side) sideFrame.html(template.side);
   };
 
-  const setPageData = data => {
+  const updateData = data => {
     if (data.main) mainFrame.data(data.main);
     if (data.side) sideFrame.data(data.side);
+    return data;
   };
 
-  const update = content => {
-    if (content.template) setPageTemplate(content.template);
-    if (content.data) setPageData(content.data);
-  };
-
-  const initView = () => {
-    $("#routes").on("click", () => controller.navigateTo("routes"));
-    $("#groups").on("click", () => controller.navigateTo("groups"));
-    $("#about").on("click", () => controller.navigateTo("about"));
-  };
+  const initView = (() => {
+    $("#routes").on("click", () => manager("routesPage"));
+    $("#groups").on("click", () => manager("groupsPage"));
+    $("#about").on("click", () => manager("aboutPage"));
+    $(".accordion").accordion();
+  })();
 
   return {
-    update,
-    initView
+    updateTemplate,
+    updateData
   };
 };

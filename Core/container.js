@@ -1,11 +1,11 @@
-const controller = (() => {
-  const jsObjectFactory = jsObjectFactoryModule();
-  const htmlTemplateFactory = htmlTemplateFactoryModule();
-  //const requestHandler = requestHandlerModule();
-  const dataProvider = dataProviderModule();
+const manager = (() => {
+  const objectFactory = jsObjectFactoryModule();
+  const templateFactory = htmlTemplateFactoryModule();
+  const handler = requestHandlerModule();
+  const dataProvider = dataProviderModule(handler, templateFactory, objectFactory);
 
   const model = modelModule();
   const view = viewModule();
-
-  return controllerModule(view, model, dataProvider);
+  const controller = controllerModule(view, model, dataProvider);
+  return controller;
 })();

@@ -1,11 +1,19 @@
 const modelModule = () => {
-  let template = 'new';
-  let dataSet = {};
-  
-  return {
-    set template (value) { template = value},
-    get template () {template},
-    set dataSet (value) { dataSet = value},
-    get dataSet () { return dataSet}
+  "use strict";
+
+  let propTemplate;
+  let propData;
+
+  //custom getter & setters don`t like the new syntax for properties EASY TO READ
+ const template = (value) => {
+    if (value) propTemplate = value;
+    return propTemplate;
   };
-}
+
+  const data = (value) => {
+    if (value) propData = value;
+    return propData;
+  };
+
+  return { template, data };
+};
