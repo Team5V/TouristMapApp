@@ -28,7 +28,7 @@ const htmlTemplateFactoryModule = () => {
 <div><ul id="rila"></ul></div>
 <h3>Пирин</h3>
 <div><ul id="pirin"></ul></div>
-<h3>СтараПланина</h3>
+<h3>Стара Планина</h3>
 <div><ul id="stara"></ul></div>
 <h3>Странджа</h3>
 <div><ul id="strandja"></ul></div></div>`;
