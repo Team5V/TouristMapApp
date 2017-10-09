@@ -22,7 +22,7 @@ const htmlTemplateFactoryModule = () => {
     main = `${routeBase}
 <button class="rate">Оцени</button>
 <button class="show-groups">Виж групите</button>`;
-    side = `<div class="accordion">
+    side = `<div id="accordion">
 <h3>Родопи</h3>
 <div><ul id="rodopi"></ul></div>
 <h3>Рила</h3>
@@ -43,7 +43,7 @@ const htmlTemplateFactoryModule = () => {
 
     side = `tuka pak li shte sa marshrutite`;
     
-    return { main };
+    return { main, side };
   };
 
   const aboutPage = () => {
@@ -70,7 +70,7 @@ const htmlTemplateFactoryModule = () => {
 <p>Лъчо е майстор на компютрите - от вън и от вътре. Като един добър сърдечен хирург той може да диагностицира неработещ код само гледайки го, но отстранява проблема от неговия източник.</p>
 </ul>
 </section>`;
-    return { main };
+    return { main, side };
   };
 
   return {

@@ -11,11 +11,13 @@ const requestHandlerModule = () => {
       success: data => {
         let resData = JSON.parse(data);
         let routeName = resData.name;
-        if (routeName) route = routeName.name;
+        if (routeName) {
+          route = routeName.name;
+        }
       },
       error: (xhr, textStatus, error) => alert("Error Happened!")
     });
   };
-  
+
   return { sendResuest };
 };

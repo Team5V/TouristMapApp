@@ -6,7 +6,8 @@ const controllerModule = (view, model, provider) => {
       model.template(provider.resolveTemplate(id));
       view.updateTemplate(model.template());
       currentPage = id;
-    } else {
+    } 
+    else {
       model.data(provider.resolveData(id));
       view.updateData(model.data());
     }
