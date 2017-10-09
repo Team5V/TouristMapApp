@@ -10,7 +10,14 @@ $(document).ready(function(){
 			nav.removeClass("f-nav");
 		}
 	});
-
+  // controls
+  (() => {
+    $("#routes").on("click", () => manager("routesPage"));
+    $("#groups").on("click", () => manager("groupsPage"));
+    $("#about").on("click", () => manager("aboutPage"));
+    $( ".accordion" ).accordion("enable");
+  })();
+  
 //Ajax Modal loader
   $body = $("body");
 

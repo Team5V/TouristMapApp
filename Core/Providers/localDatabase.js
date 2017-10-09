@@ -1,5 +1,0 @@
-const localDatabase = () =>{
-    return {
-        groups: []
-    }    
-}

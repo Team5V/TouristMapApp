@@ -22,7 +22,7 @@ const htmlTemplateFactoryModule = () => {
     main = `${routeBase}
 <button class="rate">Оцени</button>
 <button class="show-groups">Виж групите</button>`;
-    side = `<div id="accordion">
+    side = `<div class="accordion">
 <h3>Родопи</h3>
 <div><ul id="rodopi"></ul></div>
 <h3>Рила</h3>
@@ -41,7 +41,7 @@ const htmlTemplateFactoryModule = () => {
 <button class="rate">Запиши се</button>
 <button class="show-groups">Създай група</button>`;
 
-    side = `tuka pak li shte sa marshrutite`;
+    side = `tuka pak li shte sa marshrutite pak`;
     
     return { main, side };
   };
