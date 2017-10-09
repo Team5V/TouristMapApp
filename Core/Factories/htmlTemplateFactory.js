@@ -32,7 +32,7 @@ const htmlTemplateFactoryModule = () => {
 <div><ul id="stara"></ul></div>
 <h3>Странджа</h3>
 <div><ul id="strandja"></ul></div></div>`;
-    return { main };
+    return { main, side };
   };
 
   const groupsPage = () => {
@@ -40,7 +40,7 @@ const htmlTemplateFactoryModule = () => {
 <button class="rate">Запиши се</button>
 <button class="show-groups">Създай група</button>`;
     side = `tuka pak li shte sa marshrutite`;
-    return { main, side };
+    return { main };
   };
 
   const aboutPage = () => {

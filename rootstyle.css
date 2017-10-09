@@ -1,14 +1,12 @@
 body {
-  max-width: 1024px;
   margin: auto;
   background-image: url(backgroundImage.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
 
-* {
-  margin: 5px;
-  border-radius: 10px;
+footer {
+  margin: 5px 0px 5px 0px;
 }
 
 #main-and-side {
@@ -20,7 +18,7 @@ body {
 #main-and-side > main {
   margin: 0px;
   background: #dddd88;
-  flex: 3 1 70%;
+  flex: 3 1 80%;
   order: 1;
 }
 
@@ -36,6 +34,7 @@ nav > div{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin: 0px;
   background: #ccccff;
 }
 
@@ -43,6 +42,7 @@ nav > div > button {
   min-width: 20%;
   min-height: 50px;
   color: white;
+  border-radius: 10px;
   background-color: #4CAF50;
 }
 /**/
@@ -58,6 +58,7 @@ nav > div > button {
 /**/
 button:hover {
   background-color: #B0F0B2;
+  border-radius: 10px;
   color: black;
 }
 
@@ -74,6 +75,7 @@ header, footer {
   max-width: 100%;
   min-height: 100px;
   max-height: 120px;
+  border-radius: 10px;
 }
 
 /* Too narrow to support 2 columns */
